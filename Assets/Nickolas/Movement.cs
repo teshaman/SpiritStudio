@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    //WASD movement
     public float vertical;
     public float horizontal;
     public float speed;
     public Vector3 move;
+    //JumpScript
     public float jumpHeight = 7f;
     public bool jumpsAreClear;
     public float numberOfJumps = 0f;
     public float maxJumps = 2f;
     private Rigidbody rb;
+    //Camera movement
+    public Transform cam;
+    public float moveSpeed;
+    public float rotateSpeed;
+    public float maxVerticalAngleFromHorizon;
 
     void Start()
     {
@@ -42,6 +49,19 @@ public class Movement : MonoBehaviour
                 numberOfJumps += 1;
             }
         }
+
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
+
+        Vector3 rotateBody = new Vector3();
+        rotateBody.y = mouseX;
+
+        Vector3 rotateCam = new Vector3();
+        rotateCam.x = -mouseY;
+
+        transform.Rotate(rotateBody * rotateSpeed * Time.deltaTime);
+        cam.Rotate(rotateCam * rotateSpeed * Time.deltaTime);
+
     }
 
     void OnCollisionEnter(Collision other)
@@ -53,4 +73,6 @@ public class Movement : MonoBehaviour
     {
 
     }
+
+
 }
