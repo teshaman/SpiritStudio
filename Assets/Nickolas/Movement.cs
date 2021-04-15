@@ -10,16 +10,15 @@ public class Movement : MonoBehaviour
     public float speed;
     public Vector3 move;
     //JumpScript
-    public float jumpHeight = 7f;
+    public float jumpHeight = 3f;
     public bool jumpsAreClear;
     public float numberOfJumps = 0f;
-    public float maxJumps = 2f;
+    public float maxJumps = 1f;
     private Rigidbody rb;
     //Camera movement
     public Transform cam;
     public float moveSpeed;
     public float rotateSpeed;
-    public float maxVerticalAngleFromHorizon;
 
     void Start()
     {
