@@ -15,11 +15,11 @@ D:/git/Gamus/SpiritStudio
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-52305
+52594
 Successfully changed project path to: D:/git/Gamus/SpiritStudio
 D:/git/Gamus/SpiritStudio
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 21.63 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 21.95 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.3f1 (76626098c1c4)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/Resources/UnitySubsystems
@@ -35,31 +35,31 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56916
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56976
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001990 seconds.
+Registered in 0.002045 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 22.99 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 20.58 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.067 seconds
+- Completed reload, in  1.116 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000610 seconds.
+Registered in 0.000675 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.19 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.801 seconds
+- Completed reload, in  0.823 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
@@ -71,100 +71,29 @@ System memory in use before: 57.1 MB.
 System memory in use after: 57.2 MB.
 
 Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1565.
-Total: 1.786000 ms (FindLiveObjects: 0.124600 ms CreateObjectMapping: 0.047900 ms MarkObjects: 1.552800 ms  DeleteObjects: 0.059500 ms)
+Total: 1.917300 ms (FindLiveObjects: 0.162400 ms CreateObjectMapping: 0.050900 ms MarkObjects: 1.643400 ms  DeleteObjects: 0.059300 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Bas/eh.png
-  artifactKey: Guid(ba539c1d80ca8af43962bb097a78c259) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Bas/eh.png using Guid(ba539c1d80ca8af43962bb097a78c259) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9df43a7edeb2dc47c58070ecfddedac0') in 0.102693 seconds
-  Import took 0.139590 seconds .
+  path: Assets/Bas/Card.xcf
+  artifactKey: Guid(16fd26a7a1897c04791b9786041410a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Bas/Card.xcf using Guid(16fd26a7a1897c04791b9786041410a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0575523ab2ad6d2eb1574155950973b') in 0.039423 seconds
+  Import took 0.041195 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 147.549490 seconds.
-  path: Assets/Bas/eh 2.jpg
-  artifactKey: Guid(3e384e3f43b4eb44c95b35df138b3a58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Bas/eh 2.jpg using Guid(3e384e3f43b4eb44c95b35df138b3a58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ae3e3e3ef066002d156ce761b4b558e') in 0.017152 seconds
-  Import took 0.019964 seconds .
+  Time since last request: 25.210542 seconds.
+  path: Assets/Bas/Card.png
+  artifactKey: Guid(c65cc40e35218734e99223acaa6ea17f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Bas/Card.png using Guid(c65cc40e35218734e99223acaa6ea17f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd573b7249a384fcbe1f70629b556bb6') in 0.075028 seconds
+  Import took 0.077807 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000259 seconds.
-  path: Assets/Bas/eh 3.jpg
-  artifactKey: Guid(dcbee60e347d83f4ba02a031391a1158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Bas/eh 3.jpg using Guid(dcbee60e347d83f4ba02a031391a1158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b276aa8afc16cdef3ffa1a6ce53a654d') in 0.014972 seconds
-  Import took 0.035513 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000288 seconds.
-  path: Assets/Bas/eh.jpg
-  artifactKey: Guid(3f21f7999c436974988135dbe7e3c1b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Bas/eh.jpg using Guid(3f21f7999c436974988135dbe7e3c1b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7653a44b97e4e8bd28c83815b1a6a7ee') in 0.020830 seconds
-  Import took 0.023081 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 83.553008 seconds.
-  path: Assets/Bas/eh.jpg
-  artifactKey: Guid(3f21f7999c436974988135dbe7e3c1b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Bas/eh.jpg using Guid(3f21f7999c436974988135dbe7e3c1b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f981ccf545a77a2023c7b7570a917f1a') in 0.055743 seconds
-  Import took 0.066015 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.707452 seconds.
-  path: Assets/Bas/eh 3.jpg
-  artifactKey: Guid(dcbee60e347d83f4ba02a031391a1158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Bas/eh 3.jpg using Guid(dcbee60e347d83f4ba02a031391a1158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7166d401ca135eca1b737a7a78b5355f') in 0.031088 seconds
-  Import took 0.033500 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.608722 seconds.
-  path: Assets/Bas/eh 2.jpg
-  artifactKey: Guid(3e384e3f43b4eb44c95b35df138b3a58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Bas/eh 2.jpg using Guid(3e384e3f43b4eb44c95b35df138b3a58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac18cca74210e9b93cbd3c0e7a9d5e2b') in 0.021986 seconds
-  Import took 0.042587 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 149.190249 seconds.
-  path: Assets/Bas/eh 1.jpg
-  artifactKey: Guid(baa6a7293d207ca4293bb6987ed7b46e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Bas/eh 1.jpg using Guid(baa6a7293d207ca4293bb6987ed7b46e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b34965d459a350aecddb5e9b14d08c08') in 0.013746 seconds
-  Import took 0.016336 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.253438 seconds.
-  path: Assets/Bas/eh 1.jpg
-  artifactKey: Guid(baa6a7293d207ca4293bb6987ed7b46e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Bas/eh 1.jpg using Guid(baa6a7293d207ca4293bb6987ed7b46e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f300184b5fa7e10cb343164d0033041') in 0.014847 seconds
-  Import took 0.019461 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000557 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.744 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.21 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1115 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 60.0 MB.
-System memory in use after: 60.1 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1580.
-Total: 1.327200 ms (FindLiveObjects: 0.120200 ms CreateObjectMapping: 0.028500 ms MarkObjects: 1.165700 ms  DeleteObjects: 0.011900 ms)
+  Time since last request: 7.777603 seconds.
+  path: Assets/Bas/Card.png
+  artifactKey: Guid(c65cc40e35218734e99223acaa6ea17f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Bas/Card.png using Guid(c65cc40e35218734e99223acaa6ea17f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c206ab9f261aa6ed7526849c9f712d6') in 0.067621 seconds
+  Import took 0.082396 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
