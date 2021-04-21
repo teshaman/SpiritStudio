@@ -20,6 +20,8 @@ public class Movement : MonoBehaviour
     public float moveSpeed;
     public float rotateSpeed;
 
+    public bool canMove = true;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -61,6 +63,16 @@ public class Movement : MonoBehaviour
         transform.Rotate(rotateBody * rotateSpeed * Time.deltaTime);
         cam.Rotate(rotateCam * rotateSpeed * Time.deltaTime);
 
+        if (Input.GetButtonDown("Interact"))
+        {
+            moveSpeed = 0;
+            rotateSpeed = 0;
+        }
+        if (Input.GetButtonDown("Disable"))
+        {
+            moveSpeed = 100;
+            rotateSpeed = 1000;
+        }
     }
 
     void OnCollisionEnter(Collision other)
