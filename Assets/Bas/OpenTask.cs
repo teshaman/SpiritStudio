@@ -5,10 +5,11 @@ using UnityEngine;
 public class OpenTask : MonoBehaviour
 {
     public GameObject cardSwipeTask;
+    Rigidbody rb;
 
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -22,9 +23,14 @@ public class OpenTask : MonoBehaviour
                 if (Input.GetButtonDown("Interact"))
                 {
                     cardSwipeTask.SetActive(true);
+                    rb.freezeRotation = true;
                 }
             }
         }
         Debug.DrawRay(transform.position, transform.forward, Color.green);
+        if (Input.GetButtonDown("Disable"))
+        {
+            rb.freezeRotation = false;
+        }
     }
 }
