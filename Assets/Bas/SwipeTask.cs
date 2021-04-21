@@ -10,6 +10,8 @@ public class SwipeTask : MonoBehaviour
     private int currentSwipePointIndex = 0;
     private float countdown = 0;
 
+    public GameObject cardSwipeTask;
+
     private void Update()
     {
         countdown -= Time.deltaTime;
@@ -19,6 +21,8 @@ public class SwipeTask : MonoBehaviour
             currentSwipePointIndex = 0;
             Debug.Log("Death");
         }
+
+
     }
 
     public void SwipePointTrigger(SwipePoint swipePoint)
@@ -32,6 +36,8 @@ public class SwipeTask : MonoBehaviour
         if (currentSwipePointIndex >= swipePoints.Count)
         {
             currentSwipePointIndex = 0;
+            Destroy(GameObject.FindWithTag("CardSwipeDoor"));
+            cardSwipeTask.SetActive(false);
             Debug.Log("Finished");
         }
     }
