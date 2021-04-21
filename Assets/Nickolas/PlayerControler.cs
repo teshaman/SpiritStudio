@@ -5,19 +5,24 @@ using UnityEngine;
 public class PlayerControler : MonoBehaviour
 {
     public Transform playerCamera;
-    public float cameraSensivitySpeed = 10.0f;
+    public float cameraSensivitySpeed = 5.0f;
     public float movementSpeed = 3.0f;
-    [SerializeField][Range(0.0f, 0.5f)] float movementSmoothTime = 0.3f;
+    public float gravity = -13.0f;
+
+
+    [Range(0.0f, 0.5f)]
+    public float movementSmoothTime = 0.1f;
     Vector2 currentDir = Vector2.zero;
     Vector2 currentDirVelocity = Vector2.zero;
 
-    [SerializeField] [Range(0.0f, 0.5f)] float mouseSmoothTime = 0.3f;
+    [SerializeField] [Range(0.0f, 0.5f)] float mouseSmoothTime = 0.1f;
     Vector2 currentMouseDelta = Vector2.zero;
     Vector2 currentMouseDeltaVelocity = Vector2.zero;
 
     public float cameraPitch = 0.0f;
+    public float velocityY =  0.0f;
     public bool cursorIsVisible = true;
-    public CharacterController controller = null;
+    public CharacterController controller;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +63,12 @@ public class PlayerControler : MonoBehaviour
 
         currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, movementSmoothTime);
 
-        Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * movementSpeed;
+        if (controller.isGrounded)
+            velocityY = 0.0f;
+
+        velocityY += gravity * Time.deltaTime;
+
+        Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * movementSpeed + Vector3.up * velocityY;
 
         controller.Move(velocity * Time.deltaTime);
     }
