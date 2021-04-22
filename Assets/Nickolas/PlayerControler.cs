@@ -23,6 +23,8 @@ public class PlayerControler : MonoBehaviour
     public float velocityY =  0.0f;
     public bool cursorIsVisible = true;
     public CharacterController controller;
+
+    public bool canMove = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,17 +45,37 @@ public class PlayerControler : MonoBehaviour
 
     void UpdateMouseLook()
     {
-        Vector2 targetMouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        if (canMove == true)
+        {
+            Vector2 targetMouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
-        currentMouseDelta = Vector2.SmoothDamp(currentMouseDelta, targetMouseDelta, ref currentMouseDeltaVelocity, mouseSmoothTime);
+            currentMouseDelta = Vector2.SmoothDamp(currentMouseDelta, targetMouseDelta, ref currentMouseDeltaVelocity, mouseSmoothTime);
 
-        cameraPitch -= currentMouseDelta.y * cameraSensivitySpeed;
+            cameraPitch -= currentMouseDelta.y * cameraSensivitySpeed;
 
-        cameraPitch = Mathf.Clamp(cameraPitch, -90.0f, 90.0f);
+            cameraPitch = Mathf.Clamp(cameraPitch, -90.0f, 90.0f);
 
-        playerCamera.localEulerAngles = Vector3.right * cameraPitch;
+            playerCamera.localEulerAngles = Vector3.right * cameraPitch;
 
-        transform.Rotate(Vector3.up * currentMouseDelta.x * cameraSensivitySpeed);
+            transform.Rotate(Vector3.up * currentMouseDelta.x * cameraSensivitySpeed);
+        }
+        if (Input.GetButtonDown("Interact"))
+        {
+            canMove = false;
+            if (canMove == false)
+            {
+                cameraSensivitySpeed = 0.0f;
+            }
+        }
+
+        if (Input.GetButtonDown("Disable"))
+        {
+            canMove = true;
+            if (canMove == true)
+            {
+                cameraSensivitySpeed = 5.0f;
+            }
+        }
     }
 
     void UpdateMovement()

@@ -38,6 +38,8 @@ public class SwipeTask : MonoBehaviour
             currentSwipePointIndex = 0;
             Destroy(GameObject.FindWithTag("CardSwipeDoor"));
             cardSwipeTask.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             Debug.Log("Finished");
         }
     }

@@ -21,6 +21,8 @@ public class OpenTask : MonoBehaviour
             {
                 if (Input.GetButtonDown("Interact"))
                 {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
                     cardSwipeTask.SetActive(true);
                 }
             }
