@@ -4,24 +4,17 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    //WASD movement
-    public float vertical;
-    public float horizontal;
-    public float speed;
-    public Vector3 move;
-    //JumpScript
-    public float jumpHeight = 3f;
-    public bool jumpsAreClear;
-    public float numberOfJumps = 0f;
-    public float maxJumps = 1f;
+    //WASD Movement
+    private float vertical;
+    private float horizontal;
+    private Vector3 move;
+    public float movementSpeed = 5.0f;
+    //Jump
+    public float jumpHeight = 7.0f;
+    public float numberOfJumps = 0.0f;
+    public float maxJumps = 1.0f;
+    public bool limitJumps;
     private Rigidbody rb;
-    //Camera movement
-    public Transform cam;
-    public float moveSpeed;
-    public float rotateSpeed;
-
-    public bool canMove = true;
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -35,14 +28,14 @@ public class Movement : MonoBehaviour
         move.x = horizontal;
         move.z = vertical;
 
-        GetComponent<Transform>().Translate(move * speed * Time.deltaTime);
+        GetComponent<Transform>().Translate(move * movementSpeed * Time.deltaTime);
 
         if (numberOfJumps > maxJumps - 1)
         {
-            jumpsAreClear = false;
+            limitJumps = false;
         }
 
-        if (jumpsAreClear)
+        if (limitJumps)
         {
             if (Input.GetButtonDown("Jump"))
             {
@@ -50,40 +43,15 @@ public class Movement : MonoBehaviour
                 numberOfJumps += 1;
             }
         }
-
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
-
-        Vector3 rotateBody = new Vector3();
-        rotateBody.y = mouseX;
-
-        Vector3 rotateCam = new Vector3();
-        rotateCam.x = -mouseY;
-
-        transform.Rotate(rotateBody * rotateSpeed * Time.deltaTime);
-        cam.Rotate(rotateCam * rotateSpeed * Time.deltaTime);
-
-        if (Input.GetButtonDown("Interact"))
-        {
-            moveSpeed = 0;
-            rotateSpeed = 0;
-        }
-        if (Input.GetButtonDown("Disable"))
-        {
-            moveSpeed = 100;
-            rotateSpeed = 1000;
-        }
     }
 
     void OnCollisionEnter(Collision other)
     {
-        jumpsAreClear = true;
+        limitJumps = true;
         numberOfJumps = 0;
     }
     void OnCollisionExit(Collision other)
     {
 
     }
-
-
 }

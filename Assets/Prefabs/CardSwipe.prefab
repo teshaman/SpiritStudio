@@ -1628,6 +1628,7 @@ MonoBehaviour:
   - {fileID: 5070195723990922362}
   - {fileID: 5070195723216415751}
   countdownMax: 0.5
+  cardSwipeTask: {fileID: 5070195724112224026}
 --- !u!1 &5070195724274142695
 GameObject:
   m_ObjectHideFlags: 0

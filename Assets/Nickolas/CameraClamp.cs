@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CameraClamp : MonoBehaviour
 {
-    public float cameraSmoothing;
-    public int lookUpMax;
-    public int lookUpMin;
+    public float cameraSmoothing = 1.0f;
+    public float lookUpMax = 60.0f;
+    public float lookUpMin = 60.0f;
+    public Transform player;
+    private bool canMove = true;
     private Quaternion camRotation;
-    public bool canMove = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class CameraClamp : MonoBehaviour
         if (canMove == true)
         {
             camRotation.x += Input.GetAxis("Mouse Y") * cameraSmoothing * (-1);
-            camRotation.y += Input.GetAxis("Mouse X") * cameraSmoothing;
+            player.Rotate(Vector3.up * Input.GetAxis("Mouse X") * cameraSmoothing);
             camRotation.x = Mathf.Clamp(camRotation.x, lookUpMin, lookUpMax);
             transform.localRotation = Quaternion.Euler(camRotation.x, camRotation.y, camRotation.z);
         }
