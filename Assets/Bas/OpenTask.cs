@@ -5,6 +5,7 @@ using UnityEngine;
 public class OpenTask : MonoBehaviour
 {
     public GameObject cardSwipeTask;
+    public GameObject simonSaysTask;
 
     void Start()
     {
@@ -24,6 +25,16 @@ public class OpenTask : MonoBehaviour
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
                     cardSwipeTask.SetActive(true);
+                }
+            }
+
+            if (hit.collider.gameObject.tag == "SimonSays")
+            {
+                if (Input.GetButtonDown("Interact"))
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    simonSaysTask.SetActive(true);
                 }
             }
         }

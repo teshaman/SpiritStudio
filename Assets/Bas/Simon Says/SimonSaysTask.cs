@@ -110,7 +110,11 @@ public class SimonSaysTask : MonoBehaviour
         if (currentSequenceIndex > taskProgressImageList.Count)
         {
             wasSequenceGenerated = false;
+            Destroy(GameObject.FindWithTag("SimonSaysDoor"));
             gameObject.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            Debug.Log("Finished");
         }
     }
 }
