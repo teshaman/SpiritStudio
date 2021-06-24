@@ -8,7 +8,6 @@ TagManager:
   - CardSwipeDoor
   - SimonSays
   - SimonSaysDoor
-  - TicTacToe
   layers:
   - Default
   - TransparentFX

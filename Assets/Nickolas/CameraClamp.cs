@@ -10,10 +10,7 @@ public class CameraClamp : MonoBehaviour
     public Transform player;
     private bool canMove = true;
     private Quaternion camRotation;
-
-    public GameObject cardSwipeTask;
-    public GameObject simonSaysTask;
-    public GameObject ticTacToeTask;
+    // Start is called before the first frame update
     void Start()
     {
         if (canMove == true)
@@ -22,6 +19,7 @@ public class CameraClamp : MonoBehaviour
         }
     }
 
+    // Update is called once per frame
     void Update()
     {
         if (canMove == true)
@@ -30,7 +28,16 @@ public class CameraClamp : MonoBehaviour
             player.Rotate(Vector3.up * Input.GetAxis("Mouse X") * cameraSmoothing);
             camRotation.x = Mathf.Clamp(camRotation.x, lookUpMin, lookUpMax);
             transform.localRotation = Quaternion.Euler(camRotation.x, camRotation.y, camRotation.z);
-            
+        }
+
+        if (Input.GetButtonDown("Interact"))
+        {
+            canMove = false;
+        }
+
+        if (Input.GetButtonDown("Disable"))
+        {
+            canMove = true;
         }
     }
 }
