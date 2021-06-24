@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class OpenTask : MonoBehaviour
 {
+    public GameObject tasks;
     public GameObject cardSwipeTask;
     public GameObject simonSaysTask;
     public GameObject ticTacToeTask;
@@ -25,7 +26,11 @@ public class OpenTask : MonoBehaviour
                 {
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
-                    cardSwipeTask.SetActive(true);
+                    tasks.SetActive(true);
+                    if (tasks.activeInHierarchy == true)
+                    {
+                        cardSwipeTask.SetActive(true);
+                    }
                 }
             }
 
@@ -35,7 +40,11 @@ public class OpenTask : MonoBehaviour
                 {
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
-                    simonSaysTask.SetActive(true);
+                    tasks.SetActive(true);
+                    if(tasks.activeInHierarchy == true)
+                    {
+                        simonSaysTask.SetActive(true);
+                    }
                 }
             }
 
@@ -45,7 +54,11 @@ public class OpenTask : MonoBehaviour
                 {
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
-                    ticTacToeTask.SetActive(true);
+                    tasks.SetActive(true);
+                    if (tasks.activeInHierarchy == true)
+                    {
+                        ticTacToeTask.SetActive(true);
+                    }
                 }
             }
         }

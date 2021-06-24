@@ -11,9 +11,9 @@ public class CameraClamp : MonoBehaviour
     private bool canMove = true;
     private Quaternion camRotation;
 
-    public GameObject cardSwipeTask;
-    public GameObject simonSaysTask;
-    public GameObject ticTacToeTask;
+    public GameObject CardSwipe;
+    public GameObject simonSays;
+    public GameObject ticTacToe;
     void Start()
     {
         if (canMove == true)
@@ -31,6 +31,24 @@ public class CameraClamp : MonoBehaviour
             camRotation.x = Mathf.Clamp(camRotation.x, lookUpMin, lookUpMax);
             transform.localRotation = Quaternion.Euler(camRotation.x, camRotation.y, camRotation.z);
             
+        }
+
+        if (Input.GetButtonDown("Interact"))
+        {
+            canMove = false;
+            if (canMove == false)
+            {
+                cameraSmoothing = 0.0f;
+            }
+        }
+
+        if (CardSwipe.activeInHierarchy == false)
+        {
+            canMove = true;
+            if (canMove == true)
+            {
+                cameraSmoothing = 1.0f;
+            }
         }
     }
 }

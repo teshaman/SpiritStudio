@@ -25,6 +25,8 @@ public class PlayerControler : MonoBehaviour
     public CharacterController controller;
 
     public bool canMove = true;
+
+    public GameObject Tasks;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,8 +41,20 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateMouseLook();
-        UpdateMovement();
+        if (Input.GetButtonDown("Interact"))
+        {
+            canMove = false;
+        }
+
+        if (Tasks.activeInHierarchy == false)
+        {
+            canMove = true;
+            if (canMove == true)
+            {
+                UpdateMouseLook();
+                UpdateMovement();
+            }
+        }
     }
 
     void UpdateMouseLook()
@@ -58,23 +72,6 @@ public class PlayerControler : MonoBehaviour
             playerCamera.localEulerAngles = Vector3.right * cameraPitch;
 
             transform.Rotate(Vector3.up * currentMouseDelta.x * cameraSensivitySpeed);
-        }
-        if (Input.GetButtonDown("Interact"))
-        {
-            canMove = false;
-            if (canMove == false)
-            {
-                cameraSensivitySpeed = 0.0f;
-            }
-        }
-
-        if (Input.GetButtonDown("Disable"))
-        {
-            canMove = true;
-            if (canMove == true)
-            {
-                cameraSensivitySpeed = 5.0f;
-            }
         }
     }
 
@@ -94,4 +91,6 @@ public class PlayerControler : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
     }
+
+
 }

@@ -9,6 +9,8 @@ public class CountingUpTask : MonoBehaviour
 
     private int currentValue;
 
+    public GameObject tasks;
+
     private void OnEnable()
     {
         List<int> numbers = new List<int>();
@@ -41,6 +43,9 @@ public class CountingUpTask : MonoBehaviour
         if (currentValue >= buttonList.Count)
         {
             gameObject.SetActive(false);
+            tasks.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         if (currentValue == buttonID)

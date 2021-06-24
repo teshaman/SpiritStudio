@@ -18,6 +18,10 @@ public class SimonSaysTask : MonoBehaviour
     private List<int> generatedSequence;
     private bool wasSequenceGenerated = false;
 
+    public GameObject tasks;
+    public GameObject whiteLights;
+    public GameObject redLights;
+
     private void OnEnable()
     {
         if (wasSequenceGenerated == false)
@@ -112,6 +116,9 @@ public class SimonSaysTask : MonoBehaviour
             wasSequenceGenerated = false;
             Destroy(GameObject.FindWithTag("SimonSaysDoor"));
             gameObject.SetActive(false);
+            tasks.SetActive(false);
+            redLights.SetActive(false);
+            whiteLights.SetActive(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             Debug.Log("Finished");

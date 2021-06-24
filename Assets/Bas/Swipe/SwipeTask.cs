@@ -11,6 +11,7 @@ public class SwipeTask : MonoBehaviour
     private float countdown = 0;
 
     public GameObject cardSwipeTask;
+    public GameObject tasks;
 
     private void Update()
     {
@@ -38,6 +39,7 @@ public class SwipeTask : MonoBehaviour
             currentSwipePointIndex = 0;
             Destroy(GameObject.FindWithTag("CardSwipeDoor"));
             cardSwipeTask.SetActive(false);
+            tasks.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             Debug.Log("Finished");
