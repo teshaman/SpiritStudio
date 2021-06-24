@@ -8,7 +8,6 @@ public class CountingUpTask : MonoBehaviour
     [SerializeField] private List<CountingUpButton> buttonList = new List<CountingUpButton>();
 
     private int currentValue;
-
     public GameObject tasks;
 
     private void OnEnable()

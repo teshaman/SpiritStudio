@@ -61,6 +61,16 @@ public class OpenTask : MonoBehaviour
                     }
                 }
             }
+
+            if (hit.collider.gameObject.tag == "TicTacToe")
+            {
+                if (Input.GetButtonDown("Interact"))
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    ticTacToeTask.SetActive(true);
+                }
+            }
         }
         Debug.DrawRay(transform.position, transform.forward, Color.green);
         
