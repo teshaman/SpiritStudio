@@ -37,7 +37,6 @@ public class SwipeTask : MonoBehaviour
         if (currentSwipePointIndex >= swipePoints.Count)
         {
             currentSwipePointIndex = 0;
-            Destroy(GameObject.FindWithTag("CardSwipeDoor"));
             cardSwipeTask.SetActive(false);
             tasks.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
