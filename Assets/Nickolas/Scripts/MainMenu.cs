@@ -2,31 +2,55 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    private AudioSource source;
-    private float musicVolume = 1f;
-    void Start()
+    public Dropdown resolutionsDropdown;
+    Resolution[] resolutions;
+    public void Start()
     {
-        source = GetComponent<AudioSource>();
+        resolutions = Screen.resolutions;
+        resolutionsDropdown.ClearOptions();
+        List<string> options = new List<string>();
+
+        int currentResolutionIndex = 0;
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            string option = resolutions[i].width + "x" + resolutions[i].height;
+            options.Add(option);
+            if (resolutions[i].width == Screen.currentResolution.width &&
+                resolutions[i].height == Screen.currentResolution.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+        resolutionsDropdown.AddOptions(options);
+        resolutionsDropdown.value = currentResolutionIndex;
+        resolutionsDropdown.RefreshShownValue();
+    }
+    public void SetResolution (int resolutionIndex)
+    {
+        Resolution resolution = resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+    public void Update()
+    {
+
+    }
+    public static void SetFullscreen(bool isFullsreen)
+    {
+        Screen.fullScreen = isFullsreen;
+    }
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void QuitGame()
+    {
+        Debug.Log("You left the game!");
+        Application.Quit();
     }
 
-    void Update()
-    {
-        source.volume = musicVolume;
-    }
-    public void SetVolume(float vol)
-    {
-        musicVolume = vol;
-    }
-    public void Resolution1920per1080()
-    {
-        Screen.SetResolution(1920, 1080, true);
-    }
-
-    public void Resolution800per600()
-    {
-        Screen.SetResolution(800, 600, true);
-    }
 }

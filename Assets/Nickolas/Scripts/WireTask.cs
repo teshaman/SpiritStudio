@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class WireTask : MonoBehaviour
 {
+    public GameObject task;
     public List<Color> _wireColors = new List<Color>();
     public List<Wire> _leftWires = new List<Wire>();
     public List<Wire> _rightWires = new List<Wire>();
@@ -66,6 +67,7 @@ public class WireTask : MonoBehaviour
             if (successfulWires >= _rightWires.Count)
             {
                 Debug.Log("TASK COMPLETED");
+                task.SetActive(false);
             }
             else
             {
