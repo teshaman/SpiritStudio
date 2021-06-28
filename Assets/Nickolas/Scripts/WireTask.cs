@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class WireTask : MonoBehaviour
 {
     public GameObject task;
+    public GameObject playerCam;
     public List<Color> _wireColors = new List<Color>();
     public List<Wire> _leftWires = new List<Wire>();
     public List<Wire> _rightWires = new List<Wire>();
@@ -18,6 +19,9 @@ public class WireTask : MonoBehaviour
     private List<Color> _availableColors;
     private List<int> _availableLeftWireIndex;
     private List<int> _availableRightWireIndex;
+
+    public Animation animLeft;
+    public Animation animRight;
     private void Start()
     {
         _availableColors = new List<Color>(_wireColors);
@@ -68,6 +72,11 @@ public class WireTask : MonoBehaviour
             {
                 Debug.Log("TASK COMPLETED");
                 task.SetActive(false);
+                playerCam.SetActive(true);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                animLeft.Play("LeftDoorOpen");
+                animRight.Play("RightDoorOpen");
             }
             else
             {

@@ -10,9 +10,7 @@ public class CameraClamp : MonoBehaviour
     public Transform player;
     private bool canMove = true;
     private Quaternion camRotation;
-    public GameObject CardSwipe;
-    public GameObject simonSays;
-    public GameObject ticTacToe;
+    public GameObject tasks;
 
     void Start()
     {
@@ -42,7 +40,7 @@ public class CameraClamp : MonoBehaviour
             }
         }
 
-        if (CardSwipe.activeInHierarchy == false)
+        if (tasks.activeInHierarchy == false)
         {
             canMove = true;
             if (canMove == true)

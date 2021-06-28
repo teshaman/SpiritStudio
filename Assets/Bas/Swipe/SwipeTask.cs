@@ -13,6 +13,9 @@ public class SwipeTask : MonoBehaviour
     public GameObject cardSwipeTask;
     public GameObject tasks;
 
+    public Animation animLeft;
+    public Animation animRight;
+
     private void Update()
     {
         countdown -= Time.deltaTime;
@@ -41,6 +44,8 @@ public class SwipeTask : MonoBehaviour
             tasks.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            animLeft.Play("LeftDoorOpen");
+            animRight.Play("RightDoorOpen");
             Debug.Log("Finished");
         }
     }

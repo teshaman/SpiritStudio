@@ -8,6 +8,7 @@ public class OpenTask : MonoBehaviour
     public GameObject cardSwipeTask;
     public GameObject simonSaysTask;
     public GameObject ticTacToeTask;
+    public GameObject wireTask;
 
     void Start()
     {
@@ -69,6 +70,21 @@ public class OpenTask : MonoBehaviour
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
                     ticTacToeTask.SetActive(true);
+                }
+            }
+
+            if (hit.collider.gameObject.tag == "WireTask")
+            {
+                if (Input.GetButtonDown("Interact"))
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    gameObject.SetActive(false);
+                    tasks.SetActive(true);
+                    if (tasks.activeInHierarchy == true)
+                    {
+                        wireTask.SetActive(true);
+                    }
                 }
             }
         }

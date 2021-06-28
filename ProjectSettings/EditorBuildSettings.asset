@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Nickolas/Nickolas.unity
-    guid: 96cfc9484dbe5ca4ca4d4d26e90e53c6
-  - enabled: 1
-    path: Assets/Alex/Alex.unity
-    guid: 40e18bb045624174f9b8c19b52202b4e
+    path: Assets/Bas/GameplayScene.unity
+    guid: 0cb89b52e9c4bee4cad9adef01df0d4a
   m_configObjects: {}
