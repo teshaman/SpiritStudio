@@ -10,6 +10,9 @@ public class CountingUpTask : MonoBehaviour
     private int currentValue;
     public GameObject tasks;
 
+    public Animation animLeft;
+    public Animation animRight;
+
     private void OnEnable()
     {
         List<int> numbers = new List<int>();
@@ -43,6 +46,8 @@ public class CountingUpTask : MonoBehaviour
         {
             gameObject.SetActive(false);
             tasks.SetActive(false);
+            animLeft.Play("LeftDoorOpen3");
+            animRight.Play("RightDoorOpen3");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }

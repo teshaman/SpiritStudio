@@ -17,6 +17,8 @@ public class Movement : MonoBehaviour
     private Rigidbody rb;
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
     }
 

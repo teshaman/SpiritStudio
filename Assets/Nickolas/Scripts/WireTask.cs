@@ -7,6 +7,7 @@ public class WireTask : MonoBehaviour
 {
     public GameObject task;
     public GameObject playerCam;
+    public GameObject tasks;
     public List<Color> _wireColors = new List<Color>();
     public List<Wire> _leftWires = new List<Wire>();
     public List<Wire> _rightWires = new List<Wire>();
@@ -73,10 +74,11 @@ public class WireTask : MonoBehaviour
                 Debug.Log("TASK COMPLETED");
                 task.SetActive(false);
                 playerCam.SetActive(true);
+                tasks.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-                animLeft.Play("LeftDoorOpen");
-                animRight.Play("RightDoorOpen");
+                animLeft.Play("LeftDoorOpen2");
+                animRight.Play("RightDoorOpen2");
             }
             else
             {

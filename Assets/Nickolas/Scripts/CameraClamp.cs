@@ -8,7 +8,7 @@ public class CameraClamp : MonoBehaviour
     public float lookUpMax = 60.0f;
     public float lookUpMin = 60.0f;
     public Transform player;
-    private bool canMove = true;
+    public bool canMove = true;
     private Quaternion camRotation;
     public GameObject tasks;
 
@@ -31,7 +31,7 @@ public class CameraClamp : MonoBehaviour
             
         }
 
-        if (Input.GetButtonDown("Interact"))
+        if (tasks.activeInHierarchy == true)
         {
             canMove = false;
             if (canMove == false)

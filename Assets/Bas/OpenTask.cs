@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OpenTask : MonoBehaviour
 {
@@ -63,16 +64,6 @@ public class OpenTask : MonoBehaviour
                 }
             }
 
-            if (hit.collider.gameObject.tag == "TicTacToe")
-            {
-                if (Input.GetButtonDown("Interact"))
-                {
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true;
-                    ticTacToeTask.SetActive(true);
-                }
-            }
-
             if (hit.collider.gameObject.tag == "WireTask")
             {
                 if (Input.GetButtonDown("Interact"))
@@ -85,6 +76,16 @@ public class OpenTask : MonoBehaviour
                     {
                         wireTask.SetActive(true);
                     }
+                }
+            }
+
+            if (hit.collider.gameObject.tag == "Sleep")
+            {
+                if (Input.GetButtonDown("Interact"))
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
                 }
             }
         }

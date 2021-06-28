@@ -22,6 +22,8 @@ public class SimonSaysTask : MonoBehaviour
     public GameObject whiteLights;
     public GameObject redLights;
 
+    public Animation animLeft;
+    public Animation animRight;
     private void OnEnable()
     {
         if (wasSequenceGenerated == false)
@@ -119,6 +121,8 @@ public class SimonSaysTask : MonoBehaviour
             tasks.SetActive(false);
             redLights.SetActive(false);
             whiteLights.SetActive(true);
+            animLeft.Play("LeftDoorOpen4");
+            animRight.Play("RightDoorOpen4");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             Debug.Log("Finished");

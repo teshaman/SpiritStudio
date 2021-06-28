@@ -10,6 +10,7 @@ TagManager:
   - SimonSaysDoor
   - TicTacToe
   - WireTask
+  - Sleep
   layers:
   - Default
   - TransparentFX
